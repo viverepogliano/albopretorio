@@ -4,14 +4,14 @@
 set BASE_DIR=%~dp0
 cd %BASE_DIR%
 
-call git commit * -m "Update of root at %DATE% %TIME%"
+call git commit * -m "Update after update"
 
-for /f %%f in ('dir /b /ad') do (
+REM for /f %%f in ('dir /b /ad') do (
 	
-	echo ">>>>>>>>>>>>>>>>" %%f
-	call git add %%f
-	call git commit -m "Update of %%f at %DATE% %TIME%"
+	REM echo ">>>>>>>>>>>>>>>>" %%f
+	REM call git add %%f
+	REM call git commit -m "Update of %%f at %DATE% %TIME%"
 	
-)
+REM )
 
 call git push -u origin gh-pages

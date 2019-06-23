@@ -4,6 +4,8 @@
 set BASE_DIR=%~dp0
 cd %BASE_DIR%
 
+call git commit * -m "Update of root at %DATE% %TIME%"
+
 for /f %%f in ('dir /b /ad') do (
 	
 	echo ">>>>>>>>>>>>>>>>" %%f
@@ -12,4 +14,4 @@ for /f %%f in ('dir /b /ad') do (
 	
 )
 
-call git push -u origin master
+call git push -u origin gh-pages

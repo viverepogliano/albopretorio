@@ -2,7 +2,7 @@
 
 @echo off
 set BASE_DIR=%~dp0
-cd %BASE_DIR%
+cd /d %BASE_DIR%
 
 call git commit * -m "Update after update"
 

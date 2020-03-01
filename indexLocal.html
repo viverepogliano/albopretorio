@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Albo Pretorio Pogliano Milanese</title>
+<style>
+* {
+	font-family: 'segoe ui';
+	font-size: 14px;
+}
+
+#menu {
+	top: 0px;
+	left: 0px;
+	position: fixed;
+	margin: 5px;
+	width: 250px;
+}
+
+#aree {
+	border-collapse: collapse;
+	border-color: rgb(136, 136, 136);
+	border-width: 1px;
+	width: 250px;
+}
+
+#contenuto {
+	top: 0px;
+	left: 260px;
+	width: calc(100% - 270px);
+	position: absolute;
+	margin: 5px;
+}
+
+.dispari {
+	background-color: #FCF6CF;
+	color: black;
+}
+
+.pari {
+	background-color: #FEFEF2;
+	color: black;
+}
+</style>
+<script src="jquery-2.1.4.min.js"></script>
+</head>
+<body>
+	<div id="menu"><div id="update">Ultimo aggiornamento: 01/03/2020</div><br>
+<table width='100%' border='1' bordercolor='#888' cellspacing='0' style='border-collapse:collapse;border-color:rgb(136,136,136);border-width:1px'><tbody><tr class='dispari'><td></td><td><a href='AlboBeneficiariDiProvvidenze/index.html' target='contenuto'>Albo Beneficiari Di Provvidenze</a><br /></td></tr><tr class='pari'><td></td><td><a href='AttiAmministrativi/index.html' target='contenuto'>Atti Amministrativi</a><br /></td></tr><tr class='dispari'><td></td><td><a href='AttiDepositati/index.html' target='contenuto'>Atti Depositati</a><br /></td></tr><tr class='pari'><td></td><td><a href='BandiDiConcorso/index.html' target='contenuto'>Bandi Di Concorso</a><br /></td></tr><tr class='dispari'><td></td><td><a href='BandiDiGara/index.html' target='contenuto'>Bandi Di Gara</a><br /></td></tr><tr class='pari'><td></td><td><a href='DelibereDiConsiglio/index.html' target='contenuto'>Delibere Di Consiglio</a><br /></td></tr><tr class='dispari'><td></td><td><a href='DelibereDiGiunta/index.html' target='contenuto'>Delibere Di Giunta</a><br /></td></tr><tr class='pari'><td></td><td><a href='Determine/index.html' target='contenuto'>Determine</a><br /></td></tr><tr class='dispari'><td></td><td><a href='DetermineAccertamento/index.html' target='contenuto'>Determine Accertamento</a><br /></td></tr><tr class='pari'><td></td><td><a href='ElenchiIncarichiEsterni/index.html' target='contenuto'>Elenchi Incarichi Esterni</a><br /></td></tr><tr class='dispari'><td></td><td><a href='ElencoSocietàPartecipate/index.html' target='contenuto'>Elenco Società Partecipate</a><br /></td></tr><tr class='pari'><td></td><td><a href='Manifesto/index.html' target='contenuto'>Manifesto</a><br /></td></tr><tr class='dispari'><td></td><td><a href='Ordinanze/index.html' target='contenuto'>Ordinanze</a><br /></td></tr><tr class='pari'><td></td><td><a href='PubblicazioneDiMatrimonio/index.html' target='contenuto'>Pubblicazione Di Matrimonio</a><br /></td></tr></tbody></table><hr />
+		<input type="text" id="testo" />
+		<button id="cerca">Cerca</button>
+	</div>
+
+	<div id="contenuto"></div>
+
+	<script>
+		var openContenuto = function(href) {
+			$.get(href, function(data) {
+				$("#contenuto").html(data);
+				sistemaLink($("#contenuto table"), href);
+			});
+		};
+
+		var sistemaLink = function(parent, href) {
+			parent.find("a").each(function() {
+				var docHref = $(this).attr("href");
+				if (!docHref.startsWith("http")) {
+					docHref = href.replace(/\/.*$/, "/" + docHref);
+					$(this).attr("href", docHref);
+				}
+			});
+		}
+
+		var aggiungiTabella = function(pos, idTableDiv, title, data) {
+			var newHtml = $("#contenuto").html() + "<h1>" + (pos + 1) + ". "
+					+ title + "</h1>" + "<div id='" + idTableDiv + "'>" + data
+					+ "</div>";
+			$("#contenuto").html(newHtml);
+		}
+
+		var cercaInTabella = function(idTableDiv) {
+			var table = $("#" + idTableDiv + " table");
+			var allRows = table.find('tr');
+			allRows.each(function(index, row) {
+				var allCells = $(row).find('td');
+				if (allCells.length > 0) {
+					var found = false;
+					allCells.each(function(index, td) {
+						var regExp = new RegExp($("#testo").val(), 'i');
+						if (regExp.test($(td).text())) {
+							found = true;
+							return false;
+						}
+					});
+					if (found == true)
+						$(row).show();
+					else
+						$(row).hide();
+				}
+			});
+		}
+
+		var caricaPagina = function(pos) {
+			var idTableDiv = "tableDiv-" + pos;
+			var href = $(this).attr("href");
+			var title = $(this).text();
+			$.get(href, function(data) {
+				aggiungiTabella(pos, idTableDiv, title, data);
+				cercaInTabella(idTableDiv);
+				sistemaLink($("#" + idTableDiv + " table	"), href);
+			});
+		}
+
+		$(document).ready(function() {
+			$("a").each(function() {
+				$(this).click(function(e) {
+					e.preventDefault();
+					openContenuto($(this).attr("href"));
+				});
+			});
+
+			$("#cerca").attr('disabled', 'disabled');
+			$("#testo").keyup(function() {
+				if ($(this).val() != '') {
+					$("#cerca").removeAttr('disabled');
+				} else {
+					$("#cerca").attr('disabled', 'disabled');
+				}
+			});
+			$('#testo').keypress(function(e) {
+				if (e.keyCode == 13)
+					$('#cerca').click();
+			});
+
+			$("#cerca").click(function() {
+				$("#contenuto").html("");
+				$("a").each(caricaPagina);
+			});
+		});
+	</script>
+</body>
+</html>

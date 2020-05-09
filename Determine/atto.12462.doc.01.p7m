@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html xmlns="//www.w3.org/1999/xhtml" lang="it" xml:lang="it">
+    <!-- carico jquery e quello che serve per UI-->
+    
+    <!-- file per firma digitale p7m dei file -->
+    
+    <!-- menu responsive laterale -->
+    
+    <!-- javascript minificato da //github.com/italia-it/spid-sp-access-button, impostare che compresso -->
+    
+
+    <!-- INCLUDO LE WIDGET CHE MI POSSONO SERVIRE NEL PORTALE --> 
+    
+    
+    <!-- JAVASCRIPT PORTALE --> 
+    
+
+    
+    <!-- foglio di stile non minificato da //github.com/italia-it/spid-sp-access-button 
+    <tpl:asset type="css" src="sass/spid.scss" /> -->
+    
+    
+    
+    
+    <head> 
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+      
+      <!-- shiv solution per problemi html5 semantico per IE < 9 --> 
+      <!--[if lt IE 9]>
+    		<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.js"></script>
+    	<![endif]-->
+      <title>Comune di Pogliano Milanese - Portale dei servizi</title>
+      <link rel="Shortcut Icon" type="image/ico" href="//portale.comune.poglianomilanese.mi.it/public/img/css/favicon.ico">
+      
+      
+  
+      <meta property="og:url" content="">
+      <meta property="og:type" content="">
+      <meta property="og:title" content="">
+      <meta property="og:description" content="">
+      <meta property="og:image" content="">
+      <meta property="og:locale" content="it_IT">
+      <meta property="og:site_name" content="">
+  
+      
+      
+      <meta itemprop="image" content="">    
+      
+      <link rel="stylesheet" type="text/css" href="//portale.comune.poglianomilanese.mi.it/public/_c/portal.1.css">
+
+      <script type="text/javascript" src="//portale.comune.poglianomilanese.mi.it/public/_c/portal.1.js"></script>
+<script type="text/javascript" src="//portale.comune.poglianomilanese.mi.it/spider/components/public/js/jquery/jquery-ui-1.9.2/ui/i18n/jquery.ui.datepicker-it-min.js"></script>
+<script type="text/javascript" src="//portale.comune.poglianomilanese.mi.it/public/_c/js/spid-sp-access-button.min.js"></script>
+<script type="text/javascript">window.SPIDER_BASE_URL = ''; if (window.Spider) Spider.baseUrl = window.SPIDER_BASE_URL;
+</script>
+  		<!-- Script e css inclusi da portal php -->
+		<link rel="stylesheet" type="text/css" href="/css/portal_nuovo.css?v=9.24.45">
+		<script src="/js/bootbox.min.js"></script>
+		<script src="/js/portal-php.js?v=9.26.31"></script>
+</head><!-- not logged user -->
+    <body>
+
+        <div>
+            <noscript><h3>Per la completa fruizione del sito si devono abilitare i JavaScript.</h3></noscript>
+            <div class="container-fluid perc_margini">
+                
+                    <span class="hide" id="menu_top_fixed"></span>
+                    <header id="portal_top">
+      <div id="header_border_fixed"></div>
+      <div id="contenuto_header" class="row">
+          <div id="ente" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+              <div id="img_sfondo_stemma">
+                  <a href="/portal/torna_a_spider.php?pagina=http%3A%2F%2Fportale.comune.poglianomilanese.mi.it%2Fportal">
+                  <div id="img_stemma"></div>
+                  </a>
+              </div>
+              <div id="testo_ente">
+                  
+                  Comune di Pogliano Milanese
+              </div>
+          </div>
+          
+          <nav id="topbar" class="col-lg-6 col-md-6 hidden-sm hidden-xs">
+              <div class="row">
+                  
+  
+                  <div class="col-lg-offset-3 col-md-offset-3 col-lg-2 col-md-2 text-center"><a href="/portal/torna_a_spider.php?pagina=http%3A%2F%2Fportale.comune.poglianomilanese.mi.it%2Fportal%2Fservizi_pubblici">SERVIZI<br>PUBBLICI</a></div>
+                  
+                  <div class="col-lg-2 col-md-2 text-center"><a href="/portal/torna_a_spider.php?pagina=http%3A%2F%2Fportale.comune.poglianomilanese.mi.it%2Fportal%2Fservizi_privati">SERVIZI<br>PRIVATI</a></div>
+                  
+                  <div class="col-lg-2 col-md-2 text-center"><a href="//www.poglianomilanese.org/">SITO<br>UFFICIALE</a></div>
+                  
+                  <div class="col-lg-2 col-md-2 text-center"><a href="/portal/torna_a_spider.php?pagina=http%3A%2F%2Fportale.comune.poglianomilanese.mi.it%2Fportal%2Fautenticazione">ACCEDI<br>
+                        <span>REGISTRATI</span></a></div>
+                  
+                  
+                  <!-- icona composta per nuove comunicazioni private-->
+                  
+                  
+                  
+                  
+              </div>
+          </nav>
+           
+          
+          <div id="topbar-responsive" class="hidden-lg hidden-md col-sm-4 col-sm-offset-2 col-xs-6">
+              <div class="row">
+                  <div class="col-sm-4 col-xs-4 utente">
+                      <a href="/portal/torna_a_spider.php?pagina=http%3A%2F%2Fportale.comune.poglianomilanese.mi.it%2Fportal%2Fautenticazione" title="autenticazione"><i class="fa fa-user fa-3x" aria-hidden="true"></i></a>
+                  </div>
+                  <!-- icona composta per nuove comunicazioni private-->
+                  
+                  <div class="col-sm-4 col-xs-4 menu">
+                      <a href="#my-menu" title="menu"><i id="my-button" class="fa fa-bars fa-3x" aria-hidden="true"></i></a>
+                  </div>
+              </div>
+          </div>
+          
+          <div id="sub_bar_header" class="hidden-sm hidden-xs" style="text-align: center;font-size: ">
+              
+              
+          </div>
+              
+                   
+  
+      </div>
+  
+      <!-- includo qui il menu laterale responsive che deve essere presente in tutte le pagine del sito -->
+      <nav id="menu_responsive_laterale" class="not_display">
+        <div>
+            <p>
+                <a href="/portal/torna_a_spider.php?pagina=http%3A%2F%2Fportale.comune.poglianomilanese.mi.it%2Fportal%2Findex" title="home">
+                <i class="fa fa-home" aria-hidden="true"></i>
+                Home
+                </a>
+            </p>
+            <ul>
+                
+                <li>
+                    <span>
+                        <a href="/portal/torna_a_spider.php?pagina=http%3A%2F%2Fportale.comune.poglianomilanese.mi.it%2Fportal%2Finformativa_gdpr" title="Informativa Trattamento Dati">
+                        <i class="fa fa-question-circle" aria-hidden="true"></i>
+                        Informativa Trattamento Dati
+                        </a>
+                    </span>
+                </li>
+                
+                
+                <li>
+                      <span>
+                          <a href="/portal/torna_a_spider.php?pagina=http%3A%2F%2Fportale.comune.poglianomilanese.mi.it%2Fportal%2Fautenticazione" title="autenticazione">
+                          <i class="fa fa-sign-in" aria-hidden="true"></i>
+                          Accedi
+                          </a>
+                      </span>
+                  </li>
+                
+                <li class="divider"></li>
+                <li>
+                    <span>
+                        <a href="#serv_pubblici" title="servizi pubblici">
+                            <i class="fa fa-users" aria-hidden="true"></i>
+                            Servizi Pubblici
+                        </a>
+                    </span>
+                </li>
+                <li>
+                    <span>
+                        <a href="#serv_privati" title="servizi privati">
+                            <i class="fa fa-user-secret" aria-hidden="true"></i>
+                            Servizi Privati
+                        </a>
+                    </span>
+                </li>
+                
+                <li>
+                      <span>
+                          <a href="//www.poglianomilanese.org/" title="sito ufficiale">
+                          <i class="fa fa-globe" aria-hidden="true"></i>
+                          Sito Ufficiale
+                          </a>
+                      </span>
+                  </li>
+                <li class="divider"></li>
+                
+           </ul>
+    
+    
+    
+            <!-- subpanel -->
+            <div id="serv_pubblici" class="Panel">
+                <p>Lista servizi</p>
+                
+                <ul>
+                      <li>
+                            <a class="nome_servizio" href="//pogliano-servizi.soluzionipa.it/albo/albo_pretorio_tipologia_new.php?layout=true">Albo Pretorio on line</a>
+                        </li>
+<li>
+                            <a class="nome_servizio" href="//pogliano-servizi.soluzionipa.it/benefici/?layout=true">Amministrazione aperta</a>
+                        </li>
+<li>
+                            <a class="nome_servizio" href="//pogliano-servizi.soluzionipa.it/pratiche/registri.php?codEstr=DEL&layout=true">Provvedimenti organi indirizzo politico</a>
+                        </li>
+<li>
+                            <a class="nome_servizio" href="//pogliano-servizi.soluzionipa.it/pratiche/registri.php?codEstr=DET&layout=true">Provvedimenti dirigenziali</a>
+                        </li>
+<li>
+                            <a class="nome_servizio" href="//pogliano-servizi.soluzionipa.it/albo/albo_pretorio_matrimonio.php?layout=true">Pubblicazioni di matrimonio</a>
+                        </li>
+<li>
+                            <a class="nome_servizio" href="//pogliano-servizi.soluzionipa.it/trasparenza/?layout=true">Amministrazione Trasparente</a>
+                        </li>
+<li>
+                            <a class="nome_servizio" href="//pogliano-servizi.soluzionipa.it/pratiche/registri.php?codEstr=TRDEL&layout=true">Provvedimenti organi indirizzo politico</a>
+                        </li>
+<li>
+                            <a class="nome_servizio" href="//pogliano-servizi.soluzionipa.it/pratiche/registri.php?codEstr=TRDET&layout=true">Provvedimenti dirigenziali</a>
+                        </li>
+
+                  </ul>
+            </div>
+            <div id="serv_privati" class="Panel">
+                <p>Lista servizi</p>
+                
+                <div>
+                      
+                      <ul>
+                            <li>
+                                  <a class="nome_servizio" href="/portal/servizi/demografici?layout=true">Demografici</a>
+                              </li>
+<li>
+                                  <a class="nome_servizio" href="/portal/servizi/pagamenti?layout=true">Pagamenti OnLine</a>
+                              </li>
+<li>
+                                  <a class="nome_servizio" href="/portal/servizi/moduli?layout=true">Istanze OnLine</a>
+                              </li>
+<li>
+                                  <a class="nome_servizio" href="//pogliano-servizi.soluzionipa.it/caricamento_pratiche/pratiche.php?servizio=caricamento_pratiche&layout=true">Portale SUE</a>
+                              </li>
+
+                        </ul>
+                  </div>
+                
+            </div>
+        </div>
+    </nav>
+      
+  </header>
+                    <section id="portal_container">
+                        <div id="portal_main" class="col-lg-12"><script type="text/javascript">
+var openweb_csrf = "8381eeda462e600e832f43b9216fea24";
+</script>
+          <div id="portal_content" class="documento">
+            <div id="navigatore_portale" class=""> </div>
+            <div id="documento_layout">
+              <div id="documento_index">
+			                
+                <div class="titolo_pagina row">
+                  <h3 class="verde pb10 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    Documento firmato digitalmente
+                  </h3>
+                </div>
+              
+                <div class="dettagli_documento">
+                  <p>Questo file sosituisce a tutti gli effetti il cartaceo. In pratica si tratta di un file (con estensione p7m) che contiene il documento prodotto dal PC (normalmente PDF ma pu&ograve; essere di qualsiasi altro formato) e la/e firma/e. Per approfondire clicca <a href='http://it.wikipedia.org/wiki/Firma_digitale' target='_new'>qui</a>.</p>
+<p>Di seguito sono immediatamente disponibili le informazioni contenute nel file (documento e firme) oltre all'originale in formato p7m che tuttavia, per essere letto, necessita di uno specifico programma (p7m reader) che va installato sul proprio dispositivo (PC, tablet, smartphone, etc.).</p><!-- string -->  <div class="form-group">
+    <div class="row">
+      <label class="col-lg-2 col-md-2 col-sm-3 control-label-left">Nome file</label>
+      <div class="col-lg-2 col-md-2 col-sm-9">
+        <p class="form-control-static" style='word-wrap: break-word;'>12462_Visto_Contabile.pdf.p7m (originale)</p>
+      </div>
+      <label class="col-lg-2 col-md-2 col-sm-3 control-label-left">Hash (md5)</label>
+      <div class="col-lg-2 col-md-2 col-sm-9">
+        <p class="form-control-static" style='word-wrap: break-word;'>bbd795e704a85685abf03da98828954b</p>
+      </div>
+      <label class="col-lg-2 col-md-2 col-sm-3 control-label-left">Dimensioni</label>
+      <div class="col-lg-2 col-md-2 col-sm-9">
+        <p class="form-control-static" style='word-wrap: break-word;'>175.14 K (originale)</p>
+      </div>
+      <label class="col-lg-2 col-md-2 col-sm-3 control-label-left">Link per il download</label>
+      <div class="col-lg-2 col-md-2 col-sm-9">
+        <p class="form-control-static"><a class="btn btn-default" href="getDoc.php?t=download&f=documenti/12462_Visto_Contabile.pdf.p7m">Scarica</a></p>
+      </div>
+    </div>
+  </div>
+  <!-- string -->  <div class="form-group">
+    <div class="row">
+      <label class="col-lg-2 col-md-2 col-sm-3 control-label-left">Nome file</label>
+      <div class="col-lg-2 col-md-2 col-sm-9">
+        <p class="form-control-static" style='word-wrap: break-word;'>12462_Visto_Contabile.pdf (estratto)</p>
+      </div>
+      <label class="col-lg-2 col-md-2 col-sm-3 control-label-left">Hash (md5)</label>
+      <div class="col-lg-2 col-md-2 col-sm-9">
+        <p class="form-control-static" style='word-wrap: break-word;'>006d25b1ae161c955d22f58c45514934</p>
+      </div>
+      <label class="col-lg-2 col-md-2 col-sm-3 control-label-left">Dimensioni</label>
+      <div class="col-lg-2 col-md-2 col-sm-9">
+        <p class="form-control-static" style='word-wrap: break-word;'>171.77 K (estratto)</p>
+      </div>
+      <label class="col-lg-2 col-md-2 col-sm-3 control-label-left">Link per il download</label>
+      <div class="col-lg-2 col-md-2 col-sm-9">
+        <p class="form-control-static"><a class="btn btn-default" href="getDoc.php?t=downloadExt&f=documenti/12462_Visto_Contabile.pdf.p7m">Scarica</a></p>
+      </div>
+    </div>
+  </div>
+  <h3>Elenco dei firmatari:</h3><div class='pill-content col-lg-12 col-md-12 col-sm-12 col-xs-12 panel panel-default'><div id="firmatari" class="pill-pane panel-body"><div class="form-documento form-horizontal"><h4>File firmato da:</h4><div class="form-group"><div class="row"><label class="col-lg-2 col-md-2 col-sm-3 control-label-left">Stato</label><div class="col-lg-2 col-md-2 col-sm-9">
+                <p class="form-control-static">IT</p>
+              </div><label class="col-lg-2 col-md-2 col-sm-3 control-label-left">Organizzazione</label><div class="col-lg-2 col-md-2 col-sm-9">
+                <p class="form-control-static">NON PRESENTE</p>
+              </div><label class="col-lg-2 col-md-2 col-sm-3 control-label-left">Firmatario</label><div class="col-lg-2 col-md-2 col-sm-9">
+                <p class="form-control-static">Giuseppina Rosano'</p>
+              </div></div></div><div class="form-group"><div class="row"><label class="col-lg-2 col-md-2 col-sm-3 control-label-left">Qualificatore DN</label><div class="col-lg-2 col-md-2 col-sm-9">
+                <p class="form-control-static">20185018533</p>
+              </div><label class="col-lg-2 col-md-2 col-sm-3 control-label-left">Cognome</label><div class="col-lg-2 col-md-2 col-sm-9">
+                <p class="form-control-static">ROSANO'</p>
+              </div><label class="col-lg-2 col-md-2 col-sm-3 control-label-left">Nome</label><div class="col-lg-2 col-md-2 col-sm-9">
+                <p class="form-control-static">GIUSEPPINA</p>
+              </div></div></div><div class="form-group"><div class="row"></div></div><h4>Firma digitale rilasciata da:</h4><div class="form-group"><div class="row"><label class="col-lg-2 col-md-2 col-sm-3 control-label-left">Stato</label><div class="col-lg-2 col-md-2 col-sm-9">
+                <p class="form-control-static">IT</p>
+              </div><label class="col-lg-2 col-md-2 col-sm-3 control-label-left">Ente certificatore</label><div class="col-lg-2 col-md-2 col-sm-9">
+                <p class="form-control-static">INFOCERT SPA</p>
+              </div><label class="col-lg-2 col-md-2 col-sm-3 control-label-left">Tipo</label><div class="col-lg-2 col-md-2 col-sm-9">
+                <p class="form-control-static">Certificatore Accreditato</p>
+              </div></div></div><div class="form-group"><div class="row"><label class="col-lg-2 col-md-2 col-sm-3 control-label-left">Codice fiscale</label><div class="col-lg-2 col-md-2 col-sm-9">
+                <p class="form-control-static">07945211006</p>
+              </div><label class="col-lg-2 col-md-2 col-sm-3 control-label-left">Nome</label><div class="col-lg-2 col-md-2 col-sm-9">
+                <p class="form-control-static">InfoCert Firma Qualificata 2</p>
+              </div></div></div></div></div></div>                </div>
+				
+				                <div class="bottoni_pagina">
+                  <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mb15 mt15">
+                      <div class="back">
+                                                <a class="btn" href='#' onclick='javascript: window.history.back();'>Indietro</a>
+                                              </div>
+                    </div>
+                  </div>
+                </div>
+              
+              </div>
+            </div>
+          </div>
+        <footer id="portal_bottom" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+  <!-- VECCHIO FOOTER
+     <div class="ente">
+         <ul>
+             <li sp:if="!Spider.conf.get('portal.nome').blank?"><strong>{ Spider.conf.get('portal.nome') }</strong></li>
+             <li sp:if="!Spider.conf.get('ente.indirizzo').blank?">{ Spider.conf.get('ente.indirizzo') }</li>
+             <li sp:if="!Spider.conf.get('ente.telefono').blank?">Telefono { Spider.conf.get('ente.telefono') }</li>
+             <li sp:if="!Spider.conf.get('ente.fax').blank?">Fax { Spider.conf.get('ente.fax') }</li>
+             <li sp:if="!Spider.conf.get('ente.partita_iva').blank?">P.Iva { Spider.conf.get('ente.partita_iva') }</li>
+             <li sp:if="!Spider.conf.get('ente.mail').blank?">E-mail <a href="mailto:{ Spider.conf.get('ente.mail') }">{ Spider.conf.get('ente.mail') }</a></li>
+         </ul>
+     </div>
+     --> 
+  
+      <div id="hide_footer_background">
+          <div id="centered_content" class="lead text-center">
+                          Comune di Pogliano Milanese
+                          Piazza Avis Aido, 6 - 20010 - Pogliano Milanese (MI)
+                          Telefono 02.9396441 - Fax 02.93549220 - P.Iva 04202630150
+          </div>
+      </div>  
+      <div id="visible_footer">
+          <div class="row">
+              <div id="link_copy" class="col-lg-offset-2 col-lg-3 col-md-offset-1 col-md-3 col-sm-4 col-xs-4">
+                  <span id="copy_intero">&copy; 2020 <a href="http://www.soluzionipa.it/">Euro Servizi S.r.l.</a></span>
+                  <span id="copy_logo">&copy; 2020 <a href="http://www.soluzionipa.it/" class="trasp">EuroS</a></span>
+              </div>
+              
+              <div id="social_links" class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                  
+              </div>
+              
+  
+              <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 back-to-top">
+                  <a href="#" title="jjj"><i class="fa fa-chevron-circle-up fa-2x" aria-hidden="true"></i></a>
+              </div>
+          </div>
+      </div>
+  
+  </footer>
+                
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,2 @@
+
+Fatal error: Call to undefined function html_strip_tags() in /usr/local/lib/hippo/libs/HTTP/HTTPUtils.php on line 264

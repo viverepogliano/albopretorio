@@ -45,8 +45,8 @@
 <script src="jquery-2.1.4.min.js"></script>
 </head>
 <body>
-	<div id="menu"><div id="update">Ultimo aggiornamento: 18/11/2023</div><br>
-<table width='100%' border='1' bordercolor='#888' cellspacing='0' style='border-collapse:collapse;border-color:rgb(136,136,136);border-width:1px'><tbody><tr class='pari'><td></td><td><a href='DelibereDiConsiglio/index.html' target='contenuto'>Delibere Di Consiglio</a><br /></td></tr><tr class='dispari'><td class='color:red'>!</td><td><a href='DelibereDiGiunta/index.html' target='contenuto'>Delibere Di Giunta</a><br /></td></tr><tr class='pari'><td class='color:red'>!</td><td><a href='Determine/index.html' target='contenuto'>Determine</a><br /></td></tr><tr class='dispari'><td></td><td><a href='DetermineAccertamento/index.html' target='contenuto'>Determine Accertamento</a><br /></td></tr><tr class='pari'><td class='color:red'>!</td><td><a href='Ordinanze/index.html' target='contenuto'>Ordinanze</a><br /></td></tr></tbody></table><hr />
+	<div id="menu"><div id="update">Ultimo aggiornamento: 07/12/2023</div><br>
+<table width='100%' border='1' bordercolor='#888' cellspacing='0' style='border-collapse:collapse;border-color:rgb(136,136,136);border-width:1px'><tbody><tr class='pari'><td></td><td><a href='DelibereDiConsiglio/index.html' target='contenuto'>Delibere Di Consiglio</a><br /></td></tr><tr class='dispari'><td class='color:red'>!</td><td><a href='DelibereDiGiunta/index.html' target='contenuto'>Delibere Di Giunta</a><br /></td></tr><tr class='pari'><td class='color:red'>!</td><td><a href='Determine/index.html' target='contenuto'>Determine</a><br /></td></tr><tr class='dispari'><td></td><td><a href='Ordinanze/index.html' target='contenuto'>Ordinanze</a><br /></td></tr></tbody></table><hr />
 		<input type="text" id="testo" />
 		<button id="cerca">Cerca</button>
 	</div>
@@ -62,6 +62,19 @@
 		};
 
 		var sistemaLink = function(parent, href) {
+			const table = parent[0]
+			// console.log( table )
+			// console.log( table.rows )
+			const rows = Array.from(table.rows).filter( e => e.style.display !== 'none')
+			// console.log( rows )
+			if (rows.length == 1) {
+				const div = table.parentElement
+				div.style.display = 'none'
+				const h1 = div.previousSibling
+				h1.style.display = 'none'
+				return
+			}
+
 			parent.find("a").each(function() {
 				var docHref = $(this).attr("href");
 				if (!docHref.startsWith("http")) {

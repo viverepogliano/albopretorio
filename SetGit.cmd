@@ -1,0 +1,1 @@
+set PATH=%PATH%;C:\Users\giamt\Desktop\ViverePogliano\PortableGit\bin
